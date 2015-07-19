@@ -13,7 +13,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-  	@team = user.teams.build(team_params)
+  	@team = @user.teams.build(team_params)
       if @team.save
         redirect_to user_teams_path(@user), notice: "Success! Team Created"
       else
@@ -46,7 +46,7 @@ class TeamsController < ApplicationController
 
   private 
   def team_params
-  	param.require(:team).permit(:name, :description)
+  	params.require(:team).permit(:name, :description)
   end
 
   def find_team

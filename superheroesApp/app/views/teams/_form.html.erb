@@ -1,0 +1,7 @@
+<%= form_for [@current_user,@team] do |f| %>
+		<%= f.label "Team Name" %>
+		<%= f.text_field :name, autofocus: true %><br/>
+    <%= f.label "Team Description" %>
+    <%= f.text_field :description%><br />
+    <%= f.submit button%>
+<% end %>
