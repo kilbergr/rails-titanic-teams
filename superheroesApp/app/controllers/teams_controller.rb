@@ -10,6 +10,7 @@ class TeamsController < ApplicationController
 
   def new
   	@team = Team.new
+    @superheros = Superhero.all
   end
 
   def create
@@ -22,9 +23,11 @@ class TeamsController < ApplicationController
   end
 
   def show
+    @team_superheros = @team.superheros
   end
 
   def edit
+    @superheros = Superhero.all
   end
 
   def update
@@ -46,7 +49,7 @@ class TeamsController < ApplicationController
 
   private 
   def team_params
-  	params.require(:team).permit(:name, :description)
+  	params.require(:team).permit(:name, :description, :superhero_ids => [])
   end
 
   def find_team

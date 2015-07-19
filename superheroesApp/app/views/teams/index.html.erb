@@ -1,8 +1,12 @@
 <h1>All Teams</h1>
-<%= link_to "Create a Team", new_user_team_path(@current_user.id) %>
-
+	<% if @current_user %>
+	<%= link_to "Create a Team", new_user_team_path(@current_user.id) %>
+	<% end %>
 <% @teams.each do |team| %>
 <%= team.name %>
 <%= team.description %>
-<%= link_to "Edit #{team.name} team", edit_team_path(team) %>
+<%= team.superhero %>
+	<% if current_user %>
+	<%= link_to "Edit #{team.name} team", edit_team_path(@current_user.id) %>
+	<% end %>
 <% end %>

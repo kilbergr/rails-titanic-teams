@@ -12,11 +12,11 @@ Rails.application.routes.draw do
   resources :users do
     resources :teams, shallow: true
   end
-  resources :superheroes
+  resources :superheros
 end
 
-# # Prefix Verb   URI Pattern                         Controller#Action
-#         Prefix Verb   URI Pattern                         Controller#Action
+
+#      Prefix Verb   URI Pattern                         Controller#Action
 #           home GET    /home(.:format)                     sessions#home
 #         signup GET    /signup(.:format)                   sessions#signup
 #                POST   /signup(.:format)                   sessions#create
@@ -40,11 +40,11 @@ end
 #                PATCH  /users/:id(.:format)                users#update
 #                PUT    /users/:id(.:format)                users#update
 #                DELETE /users/:id(.:format)                users#destroy
-#    superheroes GET    /superheroes(.:format)              superheroes#index
-#                POST   /superheroes(.:format)              superheroes#create
-#  new_superhero GET    /superheroes/new(.:format)          superheroes#new
-# edit_superhero GET    /superheroes/:id/edit(.:format)     superheroes#edit
-#      superhero GET    /superheroes/:id(.:format)          superheroes#show
-#                PATCH  /superheroes/:id(.:format)          superheroes#update
-#                PUT    /superheroes/:id(.:format)          superheroes#update
-#                DELETE /superheroes/:id(.:format)          superheroes#destroy
+#     superheros GET    /superheros(.:format)               superheros#index
+#                POST   /superheros(.:format)               superheros#create
+#  new_superhero GET    /superheros/new(.:format)           superheros#new
+# edit_superhero GET    /superheros/:id/edit(.:format)      superheros#edit
+#      superhero GET    /superheros/:id(.:format)           superheros#show
+#                PATCH  /superheros/:id(.:format)           superheros#update
+#                PUT    /superheros/:id(.:format)           superheros#update
+#                DELETE /superheros/:id(.:format)           superheros#destroy

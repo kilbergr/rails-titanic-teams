@@ -3,5 +3,14 @@
 		<%= f.text_field :name, autofocus: true %><br/>
     <%= f.label "Team Description" %>
     <%= f.text_field :description%><br />
+     <div class="form-group">
+  <%= f.collection_check_boxes :superhero_ids, Superhero.all, :id, :name do |b| %>
+        <span>
+            <%= b.check_box %>
+            <%= b.label %>
+        </span>
+    <% end %>
+  </div>
+
     <%= f.submit button%>
 <% end %>

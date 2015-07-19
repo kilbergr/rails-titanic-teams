@@ -4,7 +4,7 @@ class Team < ActiveRecord::Base
 	validates :user_id, presence: true
 	
 	has_many :superhero_team_pairings, dependent: :destroy
-	has_many :superheroes, through: :superhero_team_pairings
+	has_many :superheros, through: :superhero_team_pairings
 
 	belongs_to :user
 end
