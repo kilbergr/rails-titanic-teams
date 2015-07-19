@@ -8,14 +8,14 @@ class SessionsController < ApplicationController
 
 	def create
 		@user = User.create(user_params)
-		if user.save
-    	session[:user_id] = user.id
-    	redirect_to '/'
+		# binding.pry
+		if @user.save
+    	session[:user_id] = @user.id
+    	redirect_to home_path, notice: "Successfully signed up!"
   	else
-    	redirect_to '/signup'
+  		
+    	redirect_to signup_path, alert: "Username taken"
     end
-		session[:user_id] = @user.id
-		redirect_to home_path
 	end
 
  def login
@@ -45,8 +45,6 @@ class SessionsController < ApplicationController
 		session[:user_id] = nil
 		redirect_to login_path
   end
-
-
 
 
   private

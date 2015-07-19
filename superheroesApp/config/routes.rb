@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   get '/home', to: 'sessions#home'
 
   get '/signup', to: 'sessions#signup'
-
+ 	post '/signup' => 'sessions#create'
   get '/login' => 'sessions#login'
-  post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  post 'login' => 'sessions#attempt_login'
+
+  delete '/logout', to: "sessions#logout", as: "logout"
 
   root 'teams#index'
   resources :users do
