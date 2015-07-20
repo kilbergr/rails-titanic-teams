@@ -13,7 +13,10 @@
 	<% if current_user.is_admin %>
 	<%= link_to "Create Superhero", new_superhero_path, class:"btn btn-success" %>
 	<% end %>
-	<%= link_to "Edit #{@team.name} team", edit_team_path(@team.user), class:"btn btn-warning" %>
-	<%= link_to "Delete #{@team.name} team", method: :destroy, class:"btn btn-danger" %>
-
+	<% if current_user %>
+	<% if @current_user.id == @team.user_id %>
+	<%= link_to "Edit #{@team.name} team", edit_team_path(@team), class:"btn btn-warning" %>
+	<%= link_to "Delete #{@team.name} team", team_path(@team), class:"btn btn-danger", 	method: :delete %>
+	<% end %>
+	<% end %>
 </div>

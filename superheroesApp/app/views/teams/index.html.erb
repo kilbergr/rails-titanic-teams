@@ -1,13 +1,13 @@
 <h1>All Teams</h1>
 	<% if @current_user %>
-	<%= link_to "Create a Team", new_user_team_path(@current_user.id) %>
+	<%= link_to "Create a Team", new_user_team_path(@current_user.id), class:"btn btn-primary" %>
 	<% end %>
 
   <div class=".col-md-4">
 <% @teams.each do |team| %>
 <h2><%= team.name %></h2>
 <%= team.description %>
-<h4><%= link_to "More about #{team.name} team", team_path(team) %></h4>
+<h4><%= link_to "More about #{team.name} team", team_path(team), class:"btn btn-warning" %></h4>
 </div>
 
 
