@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
 
 		  def current_admin
 		  		unless current_user.is_admin
-           redirect_to :back, alert: "You do not have access to this page"
+           redirect_to home_path, alert: "You do not have access to this page"
           end
 		  end
 

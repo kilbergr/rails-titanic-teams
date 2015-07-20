@@ -1,2 +1,6 @@
-<h1>Superhero#show</h1>
-<p>Find me in app/views/superheroes/show.html.erb</p>
+<h1><%= @superhero.name %></h1>
+<%= image_tag(@superhero.image_url, height:"100") %>
+<p><%= @superhero.bio %></p>
+<% if @current_user.is_admin %>
+<%= link_to "Edit", edit_superhero_path(@superhero) %>
+<% end %>

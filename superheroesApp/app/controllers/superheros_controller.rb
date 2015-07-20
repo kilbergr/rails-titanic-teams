@@ -1,7 +1,7 @@
 class SuperherosController < ApplicationController
   before_action :current_user
 	before_action :confirm_logged_in, only: [:new, :show, :edit, :destroy]
-  before_action :confirm_admin, only: [:new, :show, :edit, :destroy]
+  before_action :current_admin, only: [:new, :edit, :destroy]
   before_action :find_superhero, only: [:show, :edit, :update, :destroy]
 
   def index

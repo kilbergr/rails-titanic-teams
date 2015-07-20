@@ -1,5 +1,5 @@
 <h1>Superheroes</h1>
 <p><%@superheros.each do |hero| %>
-<%= hero.name %>
+<%= link_to "#{hero.name}", superhero_path(hero) %>
 </p>
 <% end %>
