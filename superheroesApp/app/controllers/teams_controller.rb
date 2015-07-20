@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
 
 	before_action :find_team, only: [:show, :edit, :update, :destroy]
 	before_action :find_user, only: [:index, :new, :create]
-  before_action :confirm_logged_in, only: [:new, :show, :edit, :destroy]
+  before_action :confirm_logged_in, only: [:new, :edit, :destroy]
 
   
   def index
