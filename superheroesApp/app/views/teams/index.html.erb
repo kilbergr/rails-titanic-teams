@@ -2,11 +2,14 @@
 	<% if @current_user %>
 	<%= link_to "Create a Team", new_user_team_path(@current_user.id) %>
 	<% end %>
+
+  <div class=".col-md-4">
 <% @teams.each do |team| %>
-<%= team.name %>
+<h2><%= team.name %></h2>
 <%= team.description %>
-<%= team.superhero %>
-	<% if current_user %>
-	<%= link_to "Edit #{team.name} team", edit_team_path(@current_user.id) %>
-	<% end %>
+<h4><%= link_to "More about #{team.name} team", team_path(team) %></h4>
+</div>
+
+
 <% end %>
+

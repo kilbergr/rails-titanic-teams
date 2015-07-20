@@ -1,2 +1,17 @@
-<h1>Teams#show</h1>
-<p>Find me in app/views/teams/show.html.erb</p>
+<h1><%= @team.name %></h1>
+<div>
+	<h3><%= @team.description %></h3>
+	<h4>Superhero Team Members</h4>
+	<div>
+	<p><% @team.superheros.each do |hero|%>
+		<%= hero.name %> stands at <%= hero.height %> inches tall. <%= hero.bio %>
+		<%= image_tag(hero.image_url, height: '100') %>
+
+	</p>
+	<%end %>
+	</div>
+	<%= link_to "Add Members", new_superhero_path %>
+	<%= link_to "Edit #{@team.name} team", edit_team_path(@team.user) %>
+	<%= link_to "Delete #{@team.name} team", method: :destroy %>
+
+</div>

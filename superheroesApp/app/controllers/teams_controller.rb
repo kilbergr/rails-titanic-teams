@@ -2,8 +2,9 @@ class TeamsController < ApplicationController
 
 	before_action :find_team, only: [:show, :edit, :update, :destroy]
 	before_action :find_user, only: [:index, :new, :create]
-  before_filter :confirm_logged_in, only: [:new, :show, :edit, :destroy]
- 
+  before_action :confirm_logged_in, only: [:new, :show, :edit, :destroy]
+
+  
   def index
     @teams = Team.all
   end
@@ -33,7 +34,7 @@ class TeamsController < ApplicationController
   def update
   	@team.update team_params
   	if @team.save
-  		redirect_to user_teams_path(@user), notice: "Success! Team Updated!"
+  		redirect_to team_path(@team), notice: "Success! Team Updated!"
   	else 
   		render :edit
   	end

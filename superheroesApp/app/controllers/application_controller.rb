@@ -25,5 +25,11 @@ class ApplicationController < ActionController::Base
 		    @current_user ||= User.find_by_id(session[:user_id])
 		  end
 
+		  def current_admin
+		  		unless current_user.is_admin
+           redirect_to :back, alert: "You do not have access to this page"
+          end
+		  end
+
 		  helper_method :current_user
 end
