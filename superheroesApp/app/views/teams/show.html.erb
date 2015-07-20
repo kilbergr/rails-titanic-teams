@@ -10,8 +10,10 @@
 	</p>
 	<%end %>
 	</div>
-	<%= link_to "Add Members", new_superhero_path %>
-	<%= link_to "Edit #{@team.name} team", edit_team_path(@team.user) %>
-	<%= link_to "Delete #{@team.name} team", method: :destroy %>
+	<% if current_user.is_admin %>
+	<%= link_to "Create Superhero", new_superhero_path, class:"btn btn-success" %>
+	<% end %>
+	<%= link_to "Edit #{@team.name} team", edit_team_path(@team.user), class:"btn btn-warning" %>
+	<%= link_to "Delete #{@team.name} team", method: :destroy, class:"btn btn-danger" %>
 
 </div>

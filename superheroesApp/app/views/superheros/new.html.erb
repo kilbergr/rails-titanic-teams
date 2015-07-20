@@ -1,2 +1,4 @@
 <h1>Make a new superhero</h1>
-<p>Find me in app/views/superheroes/new.html.erb</p>
+
+<%= render partial: "shared/errors", locals:{instance:@superhero} %>
+<%= render partial: "form", locals:{button:"Create Superhero"} %>

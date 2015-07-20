@@ -1,0 +1,11 @@
+<%= form_for @superhero do |f| %>
+		<%= f.label "Superhero's Name" %>
+		<%= f.text_field :name, autofocus: true %><br/>
+    <%= f.label "Biography" %>
+    <%= f.text_field :bio%><br />
+    <%= f.label "Height" %>
+    <%= f.text_field :height%><br />
+    <%= f.label "Image" %>
+    <%= f.text_field :image_url%><br />
+    <%= f.submit button, class:"btn btn-default"%>
+<% end %>

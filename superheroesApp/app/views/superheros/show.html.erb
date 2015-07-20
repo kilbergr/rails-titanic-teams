@@ -2,5 +2,5 @@
 <%= image_tag(@superhero.image_url, height:"100") %>
 <p><%= @superhero.bio %></p>
 <% if @current_user.is_admin %>
-<%= link_to "Edit", edit_superhero_path(@superhero) %>
+<%= link_to "Edit", edit_superhero_path(@superhero), class:"btn btn-warning" %>
 <% end %>
