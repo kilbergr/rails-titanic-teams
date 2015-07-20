@@ -3,4 +3,5 @@
 <p><%= @superhero.bio %></p>
 <% if @current_user.is_admin %>
 <%= link_to "Edit", edit_superhero_path(@superhero), class:"btn btn-warning" %>
+<%= link_to "Delete", superhero_path(@superhero), method: :delete, class:"btn btn-danger" %>
 <% end %>

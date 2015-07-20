@@ -1,5 +1,13 @@
+
 <h1>Superheroes</h1>
+
+<div class="row-fluid">
 <p><%@superheros.each do |hero| %>
+<div class="col-sm-6 col-md-4">
 <%= link_to "#{hero.name}", superhero_path(hero), class:"btn btn-info" %>
+
 </p>
+</div>
+
 <% end %>
+</div>

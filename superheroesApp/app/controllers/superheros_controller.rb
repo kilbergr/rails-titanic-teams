@@ -15,7 +15,7 @@ class SuperherosController < ApplicationController
   def create
   	@superhero = Superhero.create(superhero_params)
   	if @superhero.save
-  		redirect_to superheros_path, notice: "Success! Team Created"
+  		redirect_to superheros_path, notice: "Success! Superhero Created"
   	else 
   		render :new, alert: "Oops! There was an error creating this superhero"
   	end

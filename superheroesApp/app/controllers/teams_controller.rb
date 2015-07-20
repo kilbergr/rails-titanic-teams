@@ -42,7 +42,7 @@ class TeamsController < ApplicationController
 
   def destroy
   	if @team.destroy
-  		redirect_to users_path, alert: "Team Destroyed"
+  		redirect_to home_path, alert: "Team Destroyed"
   	else
   		render :show
   	end
